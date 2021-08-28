@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+    body, html {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        font-family: "Lato", sans-serif;
+        transition: background-color .5s;
+    }
+    canvas {
+        position:absolute;
+    }
+    #container {
+        position: relative;
+    }
+    #container canvas, #overlay {
+        position: absolute;
+    }
+    .sidenav {
+        height: 100%;
+        opacity: 0.85;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: rgb(0, 0, 0);
+        overflow-x: hidden;
+        transition: 0.8s;
+        padding-top: 100px;
+        border-radius: 10%;
+    }
+
+    .sidenav a {
+        padding: -10px;
+        text-decoration: none;
+        font-size: 18px;
+        color: #ffffff;
+        display: block;
+        transition: 0.3s;
+        opacity: 1;
+    }
+
+    .sidenav a:hover {
+        color: #f1f1f1;
+    }
+
+    .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+    }
+
+    #main {
+        transition: margin-left .5s;
+        padding: 16px;
+        text-decoration: solid;
+        color:#ffffff;
+        text-shadow: #111;
+    }
+
+    @media screen {
+        .sidenav {padding-top: 15px;}
+        .sidenav a {font-size: 18px;}
+    }
+
+/*    .slidecontainer { 
+      width: 90%;
+      text-align: center;
+    }
+    
+    .slider {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 1px;
+      border-radius: 5px;
+      background: #d3d3d3;
+      outline: none;
+      opacity: 0.7;
+      -webkit-transition: .2s;
+      transition: opacity .2s;
+    }
+    
+    .slider:hover {
+      opacity: 1;
+    }
+    
+    .slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background: #ff0000;
+      cursor: pointer;
+    }
+    
+    .slider::-moz-range-thumb {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background: #ff0000;
+      cursor: pointer;
+    }                               */
+
+    .container1{
+    display: block;
+    position: relative;
+    margin: auto;
+    height: auto;
+    width: auto;
+    padding: 5px;
+    }
+    h2{
+    color: #ff0000;
+    }
+    ul li{
+    color: #6f00ff;
+    display:flow-root;
+    position: relative;
+    border-bottom: 1px dotted #ffffff;
+    font-size: larger;
+    text-align: right;
+    }
+    ul li input[type=radio]{
+    position: absolute;
+    visibility: hidden;
+    }
+    ul li label{
+    display: block;
+    position: relative;
+    font-weight: 200;
+    font-size: 1.15em;
+    padding: 5px;
+    margin: 0;
+    height: auto;
+    z-index: 9;
+    cursor: pointer;
+    }
+    ul li:hover label{
+    color: #FAEBD7;
+    }
+    ul li .radio_demo{
+    display: block;
+    position: absolute;
+    border: 3px solid #AAAAAA;
+    border-radius: 100%;
+    height: 30px;
+    width: 30px;
+    top: 22px;
+    left: -25px;
+    z-index: 1;
+    }
+    ul li .radio_demo::before {
+    position: absolute;
+    content: '';
+    border-radius: 80%;
+    height: 20px;
+    width: 20px;
+    top: 5px;
+    left: 5px;
+    margin: 10;
+    transition: background 0.25s linear;
+    }
+    input[type=radio]:checked ~ .radio_demo{
+    border: 3px solid #c00000;
+    }
+    input[type=radio]:checked ~ .radio_demo::before{
+    background: #960000;
+    }
+
+    </style>
+    <title>Fractals</title>
+<script type="text/javascript" src="fractal.js"></script>
+</head>
+<body>
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+            document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+        }
+        
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft= "0";
+            document.body.style.backgroundColor = "white";
+        }  
+   
+    </script>
+    <div id="container">
+        <canvas id="viewport"></canvas>
+        <div id="overlay">
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a><br>
+
+                <div class="container1">
+                    <h2 style="text-align: center;"> F R A C T A L S </h2>
+                <ul>
+                    <li>
+                        <input type="radio" id="M" name="Fractal" checked="checked" value="9"><label for="M"><h2 style="color: rgb(255, 255, 255);"> Mandelbrot Fractal</h2></label>
+                        <div class="radio_demo"></div>
+                    </li>           
+                    <h1 style="color: rgb(255, 255, 255);text-align: left;">Julia Set</h1>
+                    <li> 
+                        <input type="radio" id="J0" name="Fractal" value="0">
+                        <label for="J0"><p><b>c = - 0.4 + 0.6i</b></p></label>
+                        <div class="radio_demo"></div>
+                    </li>
+                    <li>
+                        <input type="radio" id="J1" name="Fractal" value="1">
+                        <label for="J1"><p><b>c = 0.285 + 0i</b></p></label>
+                        <div class="radio_demo"></div>
+                    </li>
+                    <li>
+                        <input type="radio" id="J2" name="Fractal" value="2">
+                        <label for="J2"><p><b>c = 0.285 + 0.01i</b></p></label>
+                        <div class="radio_demo"></div>
+                    </li>
+                    <li>
+                        <input type="radio" id="J3" name="Fractal" value="3">
+                        <label for="J3"><p><b>c = 0.45 + <br>0.1428i</b></p></label>
+                        <div class="radio_demo"></div>
+                    </li>
+                    <li>
+                        <input type="radio" id="J4" name="Fractal" value="4">
+                        <label for="J4"><p><b>c = - 0.70176 - 0.3842i</b></p></label>
+                        <div class="radio_demo"></div>
+                    </li>
+                    <li>
+                        <input type="radio" id="J5" name="Fractal" value="5">
+                        <label for="J5"><p><b>c = - 0.83 - 0.2321i</b></p></label>
+                        <div class="radio_demo"></div>
+                    </li>
+                    <li>
+                        <input type="radio" id="J6" name="Fractal" value="6">
+                        <label for="J6"><p><b>c = - 0.8 + 0.156i</b></p></label>
+                        <div class="radio_demo"></div>
+                    </li>
+                    <li>
+                        <input type="radio" id="J7" name="Fractal" value="7">
+                        <label for="J7"><p><b>c = - 0.7269 + 0.1889i</b></p></label>
+                        <div class="radio_demo"></div>
+                    </li>
+                    <li>
+                        <input type="radio" id="J8" name="Fractal" value="8">
+                        <label for="J8"><p><b>c = 0 - 0.8i</b></p></label><br>
+                        <div class="radio_demo"></div>
+                    </li>
+                </ul><br><br>
+<!--            <h3 style="color: rgb(255, 255, 255);text-align: left;padding: 5px;">Iterations :</h3>
+                <center><div class="slidecontainer">
+                    <input type="range" min="1" max="1000" value="255" class="slider" id="myRange">
+                </div></center><br>                                                                                        -->
+                <center><input type="button" id="reset" value="Reset" style="border: #111;background-color: darkgray;font-size: x-large;padding: 10px;border-radius: 10%;background-color: #a00101;color: rgb(255, 255, 255);cursor:pointer"></center><br><br>
+                </div>
+            </div>
+            <div id="main">
+                <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+            </div> 
+        </div>
+    </div>    
+</body>
+</html>
