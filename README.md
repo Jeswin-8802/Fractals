@@ -1,6 +1,5 @@
 # Fractals
 * [Description](#description)
-* [Preview](#preview)
 * [Navigation](#navigation)
 
 ## Description
