@@ -5,13 +5,13 @@
 ## Description
 Generates the Mandelbrot Fractal and various other fractals from the Julia set.
 
-Both Mandelbrot Set and Julia Set are generated from the funtion  `f(z) = z^2 + c`  where z and c are comlex numbers.
+Both Mandelbrot Set and Julia Set are generated from the funtion  `f(z) = z^2 + c`  where z and c are complex numbers.
 
 The difference being, the position of pixels relative to a graph are substitued in c (z initially set to 0) in Mandelbrot whereas the same value is substitued in z while keeping c a constant in the Julia Set.
 
 Substituting different values of c gives different fractal patterns.
 
-The app has 10 different fractals *(Mandelbrot Fractal + 9 Fractals each with a different value of c from the Julia Set)* you can interact with.
+The app has 10 different fractals *(Mandelbrot Fractal + 9 Fractals from the Julia Set)* you can interact with.
 
 ![mandelbrot](https://user-images.githubusercontent.com/84562594/131230670-2f03b987-4c0b-44dc-8087-0e810e1ef32d.png)
 
