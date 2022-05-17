@@ -87,8 +87,8 @@ window.onload = function() {
     function generateImage() {
         offset_x = offset_x + panx*z/(height);
         offset_y = offset_y - pany*z/(height);
-        for (var y=0; y<height; y++) {
-            for (var x=0; x<width; x++) {
+        for (let y = 0; y < height; y++) {
+            for (let x = 0; x < width; x++) {
                 iterate_J(x, y, max, state);
             }
         }
@@ -101,11 +101,11 @@ window.onload = function() {
         var cr = points[state].cr;
         var ci = points[state].ci;
 
-        var zr = x*z/height;
-        zr = offset_x + zr - z/2*width/height;
+        var zr = x * z / height;
+        zr = offset_x + zr - z / 2 * width / height;
         var a = zr;
-        var zi = y*z/height;
-        zi = offset_y + z/2 - zi;
+        var zi = y * z / height;
+        zi = offset_y + z / 2 - zi;
         var b = zi;
 
         var color;
@@ -118,7 +118,7 @@ window.onload = function() {
             if(a*a+b*b>=4) 
                 break;
         }
-        if(i===max)
+        if(i === max)
             color = {r:0, g:0, b:0};
         else {
             color = {r:(2*i)%255+10, g:(i/3)%255+10, b:(i/2)%255+10};
@@ -138,10 +138,10 @@ window.onload = function() {
         var a = 0;
         var b = 0;
 
-        var cr = x*z/height;
-        cr = offset_x + cr - z/2*width/height;
-        var ci = y*z/height;
-        ci = offset_y + z/2 - ci;
+        var cr = x * z / height;
+        cr = offset_x + cr - z / 2 * width / height;
+        var ci = y * z / height;
+        ci = offset_y + z / 2 - ci;
 
         var color;
 
@@ -150,31 +150,39 @@ window.onload = function() {
             zi = 2*a*b + ci;
             a = zr;
             b = zi;
-            if(a*a+b*b>=4) 
+            if(a*a + b*b >= 4) 
                 break;
         }
         if(i===max)
-            color = {r:0, g:0, b:0};
+            color = {
+                r: 0,
+                g: 0,
+                b: 0
+            };
         else {
-            if(i%3===0) i=0;
-            i = Math.floor(logg(i+1,1.0291));
-            color = {r:(i*i+2*i)%255, g:(i/4)%255, b:(i)%255};
+            if(i % 3 === 0) i = 0;
+            i = Math.floor(logg(i + 1, 1.0291));
+            color = {
+                r: (i * i + 2 * i) % 255,
+                g: (i / 4) % 255,
+                b: i % 255
+            };
         }
 
         var pixelindex = (y * width + x) * 4;
         imagedata.data[pixelindex] = color.r;
-        imagedata.data[pixelindex+1] = color.g;
-        imagedata.data[pixelindex+2] = color.b;
-        imagedata.data[pixelindex+3] = 255;
+        imagedata.data[pixelindex + 1] = color.g;
+        imagedata.data[pixelindex + 2] = color.b;
+        imagedata.data[pixelindex + 3] = 255;
     }
 
     function onMouseDown(e) {
         var pos = getMousePos(canvas, e); 
-        panx=pos.x-width/2;
-        pany=pos.y-height/2;
+        panx = pos.x - width / 2;
+        pany = pos.y - height / 2;
         if(e.ctrlKey)
-            z=81*z/49;
-        z=7*z/9;
+            z = 81 * z / 49;
+        z = 7 * z / 9;
         generateImage();
     }
 
