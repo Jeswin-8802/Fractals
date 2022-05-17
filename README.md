@@ -1,11 +1,12 @@
 # Fractals
-* [Description](#description)
-* [Navigation](#navigation)
+ A Fractal Generator that lets you explore the Julia and Mandelbrot sets.
 
-## Description
+# Description
 Generates the Mandelbrot Fractal and various other fractals from the Julia set.
 
-Both Mandelbrot Set and Julia Set are generated from the funtion  `f(z) = z^2 + c`  where z and c are complex numbers.
+Both Mandelbrot Set and Julia Set are generated from the funtion  
+> f(z) = z <sup>2</sup> + c  
+> where z and c are complex numbers.
 
 The difference being, the position of pixels relative to a graph are substitued in c (z initially set to 0) in Mandelbrot whereas the same value is substitued in z while keeping c a constant in the Julia Set.
 
@@ -17,16 +18,16 @@ The app has 10 different fractals *(Mandelbrot Fractal + 9 Fractals from the Jul
 
 ![Julia](https://user-images.githubusercontent.com/84562594/131230752-3f51574b-6217-4f83-b302-f3b3c5cf5b6c.png)
 
-## Navigation
+# Navigation
 
- `Left Click` -> Zoom in at position pointed by mouse
+ > `Left Click` -> Zoom in at position pointed by mouse
  
- `Ctrl` + `Left Click` -> Zoom out
+ > `Ctrl` + `Left Click` -> Zoom out
 
- ### Use the menu to switch between fractals
+ ## Use the menu to switch between fractals
 
 ![menu](https://user-images.githubusercontent.com/84562594/131230811-0ff92647-7afa-4b14-b54c-6fe0dadd4e2d.png)
 
- ### Click `RESET` to reset the fractal back to its initial size.
+ ## Click `RESET` to reset the fractal back to its initial size.
  
 ![reset](https://user-images.githubusercontent.com/84562594/131231303-591a76b5-4ff5-4207-9547-a734d634c568.png)
