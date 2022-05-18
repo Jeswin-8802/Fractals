@@ -198,9 +198,9 @@ window.onload = function() {
 };
 
 function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-    document.getElementById("main").style.marginLeft = "250px";
-    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+    document.getElementById("mySidenav").style.width = "410px";
+    document.getElementById("main").style.marginLeft = "410px";
+    document.body.style.backgroundColor = "rgba(0,0,0,0.1)";
 }
         
 function closeNav() {
