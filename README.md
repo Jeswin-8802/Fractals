@@ -14,9 +14,9 @@ Substituting different values of c gives different fractal patterns.
 
 The app has 10 different fractals *(Mandelbrot Fractal + 9 Fractals from the Julia Set)* you can interact with.
 
-![mandelbrot](https://user-images.githubusercontent.com/84562594/131230670-2f03b987-4c0b-44dc-8087-0e810e1ef32d.png)
+![Screenshot 2022-05-18 122451](https://user-images.githubusercontent.com/84562594/168976939-7d0e9a69-6fe6-4e12-a23a-cf181966d84e.png)
 
-![Julia](https://user-images.githubusercontent.com/84562594/131230752-3f51574b-6217-4f83-b302-f3b3c5cf5b6c.png)
+![Screenshot 2022-05-18 122554](https://user-images.githubusercontent.com/84562594/168977039-c48e169d-2b74-4236-98bf-f0d9b0f9dfc3.png)
 
 # Navigation
 
@@ -24,10 +24,10 @@ The app has 10 different fractals *(Mandelbrot Fractal + 9 Fractals from the Jul
  
  > `Ctrl` + `Left Click` -> Zoom out
 
- ## Use the menu to switch between fractals
+ ### Use the menu to switch between fractals
 
-![menu](https://user-images.githubusercontent.com/84562594/131230811-0ff92647-7afa-4b14-b54c-6fe0dadd4e2d.png)
+![Screenshot 2022-05-18 122640](https://user-images.githubusercontent.com/84562594/168977117-e1b28474-bc07-4a1c-ad0f-d64010275c01.png)
 
- ## Click `RESET` to reset the fractal back to its initial size.
+ ### Click `RESET` to reset the fractal back to its initial size.
  
-![reset](https://user-images.githubusercontent.com/84562594/131231303-591a76b5-4ff5-4207-9547-a734d634c568.png)
+![Screenshot 2022-05-18 122720](https://user-images.githubusercontent.com/84562594/168977144-73cc8e96-11f2-465a-9c32-b99b9383e618.png)
