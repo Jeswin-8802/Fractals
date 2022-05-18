@@ -22,7 +22,7 @@ canvas {
 .sidenav {
     height: 100%;
     opacity: 0.85;
-    width: 410px;
+    width: 0px;
     position: fixed;
     z-index: 1;
     top: 0;
